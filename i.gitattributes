@@ -1,0 +1,8 @@
+# Tất cả tệp văn bản sử dụng LF
+* text=auto
+
+# Các tệp PHP
+*.php text eol=lf
+
+# Các tệp template Smarty
+*.tpl text eol=lf
