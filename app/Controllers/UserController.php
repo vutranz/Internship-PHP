@@ -1,21 +1,22 @@
 <?php
     namespace app\Controllers;
 
-    require_once 'E:/xampp/htdocs/MySmarty/vendor/smarty/smarty/libs/Smarty.class.php';
-    require_once 'E:/xampp/htdocs/MySmarty/app/Service/User/UserService.php';
+    //require_once 'E:/xampp/htdocs/MySmarty/vendor/smarty/smarty/libs/Smarty.class.php';
+    //use Smarty\Smarty;
 
-    use Smarty\Smarty;
+    require_once 'E:/xampp/htdocs/MySmarty/app/Service/User/UserService.php';
+    require_once 'E:/xampp/htdocs/MySmarty/configs/SmartyConfig.php';
+
+    
     use app\Service\User\UserService;
+    use configs\SmartyConfig;
 
 class UserController {
     private $userService;
     private $smarty;
 
     public function __construct() {
-        $this->smarty = new Smarty();
-        $this->smarty->setTemplateDir('templates/');
-        $this->smarty->setCompileDir('templates_c/');
-
+        $this->smarty = SmartyConfig::getSmarty();
         $this->userService = new UserService();
     }
 
